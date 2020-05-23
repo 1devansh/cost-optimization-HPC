@@ -3,10 +3,11 @@ import random
 import math
 from itertools import combinations
 
+import matplotlib.pyplot as plt
+
 
 p = 128
-r = 64
-v = 64
+
 
 
 def fact(n):
@@ -34,9 +35,17 @@ Tpar = (beta * 12) + ((1-beta) * 12)/p
 
 
 C = 0
+
+P =[]
+c = []
 for i in range(p):
+    P.append(p)
     R = (alpha ** i) * ((1-alpha)**(p-i)) * comb(p,i)
     C += ((Tpar * R) * ((p - i) * CpiR + i * CpiV))
-
 C =C + Tpar * Cw
+
+plt.plot(C,)
+plt.show()
+plt.title('Cost for parallel computations with different scalabilty')
+
 print(C)
