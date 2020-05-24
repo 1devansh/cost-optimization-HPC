@@ -35,24 +35,12 @@ CpiV = 0.02
 Cw = 1
 beta = [0,0.01, 0.05, 0.1, 0.2, 0.3]
 alpha = 0.85
+fig, (one) = plt.subplots(1, 1)
 
+for temp in range(5):
+    L,M = graph(p, beta, alpha, CpiR, CpiV, Cw, temp)
+    one.plot(L,M)
 
-L,M = graph(p, beta, alpha, CpiR, CpiV, Cw, 1)
-fig, (one, two, three, four, five) = plt.subplots(1, 5)
-one.plot(L,M)
-
-L, M = graph(p, beta, alpha, CpiR, CpiV, Cw, 2)
-two.plot(L, M)
-
-L, M = graph(p, beta, alpha, CpiR, CpiV, Cw, 3)
-three.plot(L, M)
-
-L, M = graph(p, beta, alpha, CpiR, CpiV, Cw, 4)
-four.plot(L, M)
-
-L, M = graph(p, beta, alpha, CpiR, CpiV, Cw, 5)
-
-five.plot(L, M)
 
 #plt.plot(L,M)
 fig.suptitle('Cost for parallel computations with different scalabilty')
