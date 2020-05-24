@@ -17,13 +17,13 @@ def comb(p, v):
 def graph(p, beta, alpha, CpiR, CpiV, Cw):
     P = []
     c = []
-    alph =[]
-    
+    alph = []
+
     for i in range(1, p+1):
         C = 0
         P.append(i)
         alph.append(alpha)
-        
+
         Tpar = (beta[temp] * 12) + ((1-beta[temp]) * 12)/i
 
         for j in range(i):
@@ -38,24 +38,24 @@ temp = 4
 
 p = 128
 CpiR = 0.2
-CpiV = 0.02
+CpiV = 0.15
 Cw = 1
 beta = [0.01, 0.05, 0.1, 0.2, 0.3]
 alpha = 1
 fig = plt.figure()
 one = plt.axes(projection="3d")
 f = alpha
-while alpha >0:
+while alpha > 0:
     alpha = alpha - f/128
     L, M, A = graph(p, beta, alpha, CpiR, CpiV, Cw)
     one.plot3D(L, A, M)
 
 
 fig.suptitle(
-    'Cost for parallel computations with volatile process of different availability')
+    'Cost for parallel computations with volatile process of different availability and price')
 one.set_ylabel('Alpha')
 one.set_xlabel('No. of processors (P)')
 one.set_zlabel('Cost(p)')
-#one.set_zlim3d(0, 20)
+one.set_zlim3d(0, 20)
 one.legend()
 plt.show()
