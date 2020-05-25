@@ -1,6 +1,7 @@
 from __future__ import division
 import random
 import math
+import numpy as np
 from mpl_toolkits import mplot3d
 from itertools import combinations
 import matplotlib.pyplot as plt
@@ -56,6 +57,6 @@ fig.suptitle(
 one.set_ylabel('Alpha')
 one.set_xlabel('No. of processors (P)')
 one.set_zlabel('Cost(p)')
-#one.set_zlim3d(0, 20)
+
 one.legend()
 plt.show()
